@@ -1,0 +1,49 @@
+5.10.17
+Wrappers:
+Does it have to be a well defined routine?
+so not a single interception, multiple ones
+Does this work without a dynamic library, work with a static?
+Tool Registration: 
+  option 1: only a dynamic library thing
+  option 2: should work with static? if somehow the tool run first eh? requires more investigation
+
+TABLE: orig think opeque object, what if it is dynamic, lookup everytime?
+  A large struct that we access so it's a fast operation
+  Tool just knows what is the next tool to call
+    * LOOK AT WRAPPING SLIDE!
+      blob opaque to the tool
+      each tool knows its own state and next tool state? ehhhh
+      changed to next_table next_table
+
+      opaque way requires a call and that was the issue: this eliminates the opportunity to do dynamic tools since it would change the table. need notification function that would notify the table has changed etc etc.
+
+      So in a table, the 
+
+      The table lookup could also be global with passing an ID
+        would allwo MPI to change the table dynamically
+        do we want that and how?
+        is this a problem when combining with sessions?
+
+      Should this be combined with MPI_T events, notifcation in case of tools have changed
+
+      Reason to do it this way and not have implementation call everything
+
+      MPI ECHO BARRY ROUNDTREE !! LOOK UP THIS PAPER
+      mpi tool interfaces: a role model for other standards pdf
+
+
+   2017 25 years of MPI slide deck to look at
+
+  Grt rid of string for query round
+  may not matter if we change to a table or a struct    
+  
+  CVARS attached to the function from the beginning, MPI_T cvars?
+    bind cvars and pvars to events. 
+
+  adding the mpi function to a table we have plus ENUM problem
+
+  THREAD safety: iterating through dynamically updated list!
+  Ans: if you allow update then there needs to be guarentees when this occurs
+
+  CHECK OUT DYNAMIC TOOLS SLIDE
+  

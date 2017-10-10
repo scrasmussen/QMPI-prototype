@@ -1,0 +1,5 @@
+QMPI
+  * Address RSA is getting sent to
+    * get code immediately so work does not slowup
+  * Moving paperwork
+  * Seperate WMPI form PMPI-II
